@@ -12,19 +12,10 @@
     </header>
     
     <main class="main">
-      {{#with messages}}
+      {{#with info}}
          <div class="messages">
             <h1 class="picture-title">{{title}}</h1>
-            
-            {{#each list}}
-                <div class="mg">
-                  <strong class="mg-title">{{name}}</strong>
-                  <p class="mg-text">{{message}}</p>
-                  <span class="day">{{day}}</span>
-                </div>
-            {{/each}}
-
-            <a href="" class="link">All messages</a>
+            <p class="mg-text">{{description}}</p>
          </div>
       {{/with}}
 
@@ -50,13 +41,43 @@
     </main>
 
     <div class="adventure">
-      {{#each advantages}}
+      {{#with updates}}
          <div class="adventure-1">
             <strong class="adventure-title">{{title}}</strong>
-            <p class="adventure-text">{{text}}</p>
+            {{#each list}}
+               <div class="clas">
+                  <div class="cool">32x32</div>
+                  <span class="adventure-name">@username</span>
+               </div>
+               <p class="adventure-text">{{description}}</p>
+            {{/each}}
+            {{#with show_all}}
+               <a href="{{url}}" class="id">{{text}}</a>
+            {{/with}}
          </div>
-      {{/each}}
+      {{/with}}
     </div>
+
+  <div class="paddi">
+    {{#with expirience}}
+      <div class="paddi-main">
+        <h2 class="picture-3">{{title}}</h2>
+        <h3 class="paddi-2">{{badge}}</h3>
+      </div>
+    {{/with}}
+
+    <div class="adventure-picture">
+      {{#with expirience}}
+           {{#each list}}
+             <div class="adventure-main">
+               <strong class="adventure-title-2">{{name}}</strong>
+               <p class="adventure-text-2">{{details}}</p>
+             </div>
+           {{/each}}
+      {{/with}}
+    </div>
+  </div>
+
 
     <footer class="footer">
       <div>
